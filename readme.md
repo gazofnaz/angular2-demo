@@ -1,8 +1,13 @@
-1) Open a command prompt in the project's root directory (APM)
+0) Install Docker (see https://github.com/gazofnaz/docker-php)
 
-2) Type: `npm install`
-    This installs the dependencies as defined in the package.json file.
+1) `docker pull hensansi/angular2`
+
+2) (docker start?) `docker run -d -p 8082:80 --name dockerangular -v <yourdir>/angular:/var/www/angular hensansi/angular2`
+
+3) `docker exec -i -t dockerangular /bin/bash`
+
+4) Type: `npm install`
     
-3) Type: `npm start`
-    This launches the TypeScript compiler (tsc) to compile the application and wait for changes. 
-    It also starts the lite-server and launches the browser to run the application.
+5) Type: `npm start`
+
+6) Visit http://localhost:8082
